@@ -1,0 +1,14 @@
+/* Styling for the navbar */
+.navbar {
+  background-color: blue;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+}
+
+/* Center-aligning text */
+body {
+  text-align: center;
+}
