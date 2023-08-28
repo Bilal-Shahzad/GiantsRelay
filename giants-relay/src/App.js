@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css'; 
-import Header from './Header';
-import Body from './Body';
-import Footer from './footer';
+import Header from './Header/Header';
+import Body from './Body/Body';
+import Footer from './Footer/footer';
 function App() {
   return (
     <div className="App">
