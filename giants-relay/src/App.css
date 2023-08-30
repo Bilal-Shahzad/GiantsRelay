@@ -10,11 +10,36 @@ body {
   text-align: center;
 }
 
-.header {
-  background-color: #333333;
+header {
+  background-color: #283593;
   color: white;
-  padding: 20px;
+  padding: 10px 0;
+  text-align: center;
 }
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+nav a:hover {
+  color: #A71930; 
+}
+
 
 .images {
   display: flex;
@@ -27,16 +52,32 @@ body {
   margin-top: 20px;
 }
 
-.image {
+.images {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  background-color: blue; /* Set the background color to blue */
-  color: white; /* Set text color to white */
-  padding: 20px; /* Add some padding for spacing */
-
+  margin: 20px;
 }
+
+.images > div {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+.images img {
+  max-width: 100%;
+  height: auto;
+}
+
+.images p {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 
 .image-text {
   text-align: justify;

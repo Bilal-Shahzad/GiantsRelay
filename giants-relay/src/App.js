@@ -1,8 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './App.css'; 
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Header/Header';
-import Body from './Body/Body';
+import StarPlayersPage from './Schedule/StarPlayersComponent';
+import TeamPage from './Team/TeamComponent';
+import NewsPage from './News/NewsComponent';
+import Body from './Body/Body'
 import Footer from './Footer/footer';
 
 function App() {
@@ -10,13 +13,12 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <Switch>
-          {/* Define your routes and corresponding components */}
-          <Route path="/star-players" component={StarPlayersComponent} />
-          <Route path="/team" component={TeamComponent} />
-          <Route path="/news" component={NewsComponent} />
-          <Route path="/" exact component={Body} />
-        </Switch>
+        <Routes>
+          <Route path="/star-players" element={<StarPlayersPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/news" element={<NewsPage />} />
+        </Routes>
+        <Body />
         <Footer />
       </div>
     </Router>

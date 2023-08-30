@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import the Link component
+import { NavLink } from 'react-router-dom';
 
 function Header() {
   return (
     <header>
       <nav>
         <ul>
-          {/* Use the Link component to create navigation links */}
-          <li><Link to="/star-players">Star Players</Link></li>
-          <li><Link to="/team">Team</Link></li>
-          <li><Link to="/news">News</Link></li>
+          <li><NavLink to="/star-players">Star Players</NavLink></li>
+          <li><NavLink to="/team">Team</NavLink></li>
+          <li><NavLink to="/news">News</NavLink></li>
         </ul>
       </nav>
       <h1>Welcome to all things New York Giants - Giants Wire</h1>
