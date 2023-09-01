@@ -15,7 +15,7 @@ function ScheduleComponent() {
           conference: 'NFC'
         },
         headers: {
-            'X-RapidAPI-Key': 'c5a06ca78emshb28580c191d09a0p19816fjsnf8f65962ecf1',
+            'X-RapidAPI-Key': '',
             'X-RapidAPI-Host': 'sportspage-feeds.p.rapidapi.com'
         }
       };
