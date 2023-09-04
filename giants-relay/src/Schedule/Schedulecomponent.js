@@ -1,42 +1,51 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import env from 'react-dotenv'
-// import {TANK_API_KEY} from 'dotenv'
-
-const options = {
-  method: 'GET',
-  url: 'https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLTeamSchedule',
-  params: {
-    teamAbv: 'NYG',
-    season: '2023',
-  },
-  headers: {
-    'X-RapidAPI-Key': process.env.TANK_API_KEY,
-    // 'X-RapidAPI-Key': '',
-    'X-RapidAPI-Host': 'tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com',
-  },
-};
-
-(async () => {
-  try {
-    const response = await axios.request(options);
-    // console.log(response.data.body.schedule);
-    console.log(response.data)
-  } catch (error) {
-    console.error(error);
-  }
-  
-})();
-
 
 function ScheduleComponent() {
+  const [schedule, setSchedule] = useState([]);
+  const apiKey = process.env.REACT_APP_TANK_API_KEY;
+
+  useEffect(() => {
+    const options = {
+      method: 'GET',
+      url: 'https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLTeamSchedule',
+      params: {
+        teamAbv: 'NYG',
+        season: '2023',
+      },
+      headers: {
+        'X-RapidAPI-Key': 'c5a06ca78emshb28580c191d09a0p19816fjsnf8f65962ecf1',
+        'X-RapidAPI-Host': 'tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com',
+      },
+    };
+
+    async function fetchSchedule() {
+      try {
+        const response = await axios.request(options);
+        setSchedule(response.data.body.schedule);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchSchedule();
+  }, [apiKey]);
+
   return (
     <div>
       <h2>Here Is The Schedule For the 2023 Season</h2>
-      {/* You can add the schedule data rendering here if you have it */}
+      <ul>
+        {schedule.map((game, index) => (
+          <li key={index}>
+            <p>Date: {game.date}</p>
+            <p>Opponent: {game.opponent}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
+
 
 
 // Other code...
