@@ -14,7 +14,7 @@ function ScheduleComponent() {
         season: '2023',
       },
       headers: {
-        'X-RapidAPI-Key': 'c5a06ca78emshb28580c191d09a0p19816fjsnf8f65962ecf1',
+        'X-RapidAPI-Key': apiKey,
         'X-RapidAPI-Host': 'tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com',
       },
     };
@@ -39,6 +39,11 @@ function ScheduleComponent() {
           <li key={index}>
             <p>Date: {game.date}</p>
             <p>Opponent: {game.opponent}</p>
+            <p>Home Team: {game.homeTeam}</p>
+            <p>Away Team: {game.awayTeam}</p>
+            <p>Location: {game.location}</p>
+            <p>Time: {game.time}</p>
+            {/* Add more game details as needed */}
           </li>
         ))}
       </ul>
