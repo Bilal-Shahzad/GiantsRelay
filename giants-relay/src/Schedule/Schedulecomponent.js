@@ -14,7 +14,7 @@ function ScheduleComponent() {
         season: '2023',
       },
       headers: {
-        'X-RapidAPI-Key': apiKey,
+        'X-RapidAPI-Key': process.env.TANK_API_KEY,
         'X-RapidAPI-Host': 'tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com',
       },
     };
