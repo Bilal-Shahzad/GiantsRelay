@@ -7,7 +7,7 @@ import TeamPage from './Team/TeamComponent';
 import NewsPage from './News/NewsComponent';
 import Footer from './Footer/footer';
 import ScheduleComponent from './Schedule/Schedulecomponent'; 
-
+import EnterPage from './Enter-Page/EnterPage'; 
 
 function App() {
   return (
@@ -15,11 +15,11 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
+          <Route path="/enter" element={<EnterPage />} />
           <Route path="/" element={<Body />} />
           <Route path="/schedule" element={<ScheduleComponent />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/news" element={<NewsPage />} />
-          <Route path="/schedule" element={<ScheduleComponent />} />
         </Routes>
         <Footer />
       </div>

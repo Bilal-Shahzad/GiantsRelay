@@ -17,13 +17,19 @@ function TeamComponent() {
             getStats: 'true'
           },
           headers: {
-            'X-RapidAPI-Key': process.env.TANK_API_KEY,
-            'X-RapidAPI-Host': 'tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com'
+            'X-RapidAPI-Key': 'c5a06ca78emshb28580c191d09a0p19816fjsnf8f65962ecf1',
+            'X-RapidAPI-Host': 'https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLTeamRoster'
           }
         };
 
         const response = await axios.request(options);
-        setRosterData(response.data);
+
+        if (Array.isArray(response.data)) {
+          setRosterData(response.data);
+        } else {
+          console.error('API response is not an array:', response.data);
+        }
+
         setLoading(false);
       } catch (error) {
         console.error(error);
