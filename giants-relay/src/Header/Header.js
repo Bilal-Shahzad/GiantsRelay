@@ -13,7 +13,7 @@ function Header() {
             <li><NavLink to="/news">News</NavLink></li>
           </ul>
         </nav>
-        <h1>Welcome to all things New York Giants - Giants Wire</h1>
+        <h1>Welcome to all things New York Giants - Giants Relay</h1>
       </header>
       <Outlet />
     </>

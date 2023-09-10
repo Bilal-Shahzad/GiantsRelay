@@ -1,58 +1,55 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function TeamComponent() {
-  const [rosterData, setRosterData] = useState([]);
-  const [setLoading] = useState(true);
+  const [teamData, setTeamData] = useState({});
+  const apiKey = process.env.REACT_APP_TANK_API_KEY;
 
   useEffect(() => {
-    const fetchData = async () => {
+    const options = {
+      method: 'GET',
+      url: 'https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLTeamRoster',
+      params: {
+        teamAbv: 'NYG',
+        getStats: 'true',
+      },
+      headers: {
+        'X-RapidAPI-Key': 'c5a06ca78emshb28580c191d09a0p19816fjsnf8f65962ecf1',
+        'X-RapidAPI-Host': 'tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com',
+      },
+    };
+
+    async function fetchTeamData() {
       try {
-        const options = {
-          method: 'GET',
-          url: 'https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLTeamRoster',
-          params: {
-            teamID: '6',
-            teamAbv: 'NYG',
-            getStats: 'true'
-          },
-          headers: {
-            'X-RapidAPI-Key': 'c5a06ca78emshb28580c191d09a0p19816fjsnf8f65962ecf1',
-            'X-RapidAPI-Host': 'https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLTeamRoster'
-          }
-        };
-
         const response = await axios.request(options);
-
-        if (Array.isArray(response.data)) {
-          setRosterData(response.data);
-        } else {
-          console.error('API response is not an array:', response.data);
-        }
-
-        setLoading(false);
+        setTeamData(response.data.body);
       } catch (error) {
         console.error(error);
       }
-    };
+    }
 
-    fetchData();
-  }, []);
+    fetchTeamData();
+  }, [apiKey]);
 
   return (
     <div>
-      <h2>Team</h2>
-      <p>Here is the roster for the 2023-2024 NFL Season:</p>
-      
-        <ul>
-          {rosterData.map(player => (
-            <li key={player.playerID}>
-              <strong>Name:</strong> {player.playerName}<br />
-              <strong>Position:</strong> {player.playerPosition}<br />
-              <strong>Jersey Number:</strong> {player.playerJerseyNumber}<br />
-            </li>
-          ))}
-        </ul>
+      <h2>Team: {teamData.team}</h2>
+      <p>Here is the New York Giants roster for the 2023-2024 NFL Season:</p>
+      <ul>
+        {teamData.roster && teamData.roster.map((player, index) => (
+          <li key={index}>
+            <p>Name: {player.longName}</p>
+            <p>Position: {player.pos}</p>
+            <p>Jersey Number: {player.jerseyNum}</p>
+            <p>Age: {player.age}</p>
+            <p>Height: {player.height}</p>
+            <p>Weight: {player.weight} lbs</p>
+            <p>School: {player.school}</p>
+            <p>Experience: {player.exp} years</p>
+            <p> <img src={player.espnHeadshot} alt="Player Headshot" /></p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
