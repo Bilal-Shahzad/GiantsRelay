@@ -125,13 +125,12 @@ function NewsComponent() {
 
   return (
     <div>
-      <h2>News</h2>
+      <h2>Recaps</h2>
       <div className="game-schedule">
         {schedule.map((game, index) => (
           <div key={index} className="game">
             <h3>Week {game.week} - {game.date}</h3>
             <p>Opponent: {game.opponent}</p>
-            <p>Time: {game.time}</p>
             <p>Recap: {game.recap}</p>
           </div>
         ))}

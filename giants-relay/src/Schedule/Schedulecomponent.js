@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function ScheduleComponent() {
-  const [schedule, setSchedule] = useState([]);
+function TeamComponent() {
+  const [teamData, setTeamData] = useState({});
   const apiKey = process.env.REACT_APP_TANK_API_KEY;
 
   useEffect(() => {
     const options = {
       method: 'GET',
-      url: 'https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLTeamSchedule',
+      url: 'https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLTeamRoster',
       params: {
         teamAbv: 'NYG',
-        season: '2023',
+        getStats: 'true',
       },
       headers: {
         'X-RapidAPI-Key': 'c5a06ca78emshb28580c191d09a0p19816fjsnf8f65962ecf1',
@@ -19,31 +19,34 @@ function ScheduleComponent() {
       },
     };
 
-    async function fetchSchedule() {
+    async function fetchTeamData() {
       try {
         const response = await axios.request(options);
-        setSchedule(response.data.body.schedule);
+        setTeamData(response.data.body);
       } catch (error) {
         console.error(error);
       }
     }
 
-    fetchSchedule();
+    fetchTeamData();
   }, [apiKey]);
 
   return (
     <div>
-      <h2>Here Is The Schedule For the 2023 Season</h2>
+      <h2>Team: {teamData.team}</h2>
+      <p>Here is the roster for the 2023-2024 NFL Season:</p>
       <ul>
-        {schedule.map((game, index) => (
+        {teamData.roster && teamData.roster.map((player, index) => (
           <li key={index}>
-            <p>Date: {game.date}</p>
-            <p>Opponent: {game.opponent}</p>
-            <p>Home Team: {game.homeTeam}</p>
-            <p>Away Team: {game.awayTeam}</p>
-            <p>Location: {game.location}</p>
-            <p>Time: {game.time}</p>
-            {/* Add more game details as needed */}
+            <p>Name: {player.longName}</p>
+            <p>Position: {player.pos}</p>
+            <p>Jersey Number: {player.jerseyNum}</p>
+            <p>Age: {player.age}</p>
+            <p>Height: {player.height}</p>
+            <p>Weight: {player.weight} lbs</p>
+            <p>School: {player.school}</p>
+            <p>Experience: {player.exp} years</p>
+            <p> <img src={player.espnHeadshot} alt="Player Headshot" /></p>
           </li>
         ))}
       </ul>
@@ -51,71 +54,4 @@ function ScheduleComponent() {
   );
 }
 
-
-
-// Other code...
-
-
-//   const [apiData, setApiData] = useState(null);
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       const apiKey = process.env.REACT_APP_API_KEY;
-//       console.log("API Key:", apiKey);
-
-//       const options = {
-//         method: 'GET',
-//         url: 'https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLTeamSchedule',
-//         params: {
-//           teamAbv: 'NYG',
-//           season: '2023'
-//         },
-//         headers: {
-//           'X-RapidAPI-Key': apiKey,
-//           'X-RapidAPI-Host': 'tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com'
-//         }
-//       };
-
-//       try {
-//         const response = await axios.request(options);
-//         setApiData(response.data);
-//       } catch (error) {
-//         if (error.response && error.response.status === 401) {
-//           console.error('Unauthorized: Please check your API key.');
-//         } else if (error.response && error.response.status === 429) {
-//           console.error('Too Many Requests: Implement rate limiting.');
-//         } else {
-//           console.error('An error occurred:', error.message);
-//         }
-//         setApiData({});
-//       }
-//     };
-
-//     fetchData();
-//   }, []);
-
-//   return (
-//     <div>
-//       <h2>Here Is The Schedule For the 2023 Season</h2>
-
-//       {apiData && apiData.schedule ? (
-//         <div>
-//           <ul>
-//             {apiData.schedule.map((game, index) => (
-//               <li key={index}>
-//                 Game Date: {game.date}<br />
-//                 Home Team: {game.homeTeam}<br />
-//                 Away Team: {game.awayTeam}<br />
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-//       ) : (
-//         <p>Loading data...</p>
-//       )}
-//     </div>
-//   );
-// }
-
-export default ScheduleComponent;
-
+export default TeamComponent;
