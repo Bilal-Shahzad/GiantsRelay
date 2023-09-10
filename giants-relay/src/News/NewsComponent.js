@@ -112,7 +112,7 @@ function NewsComponent() {
       date: 'Sun, 12/31',
       opponent: 'LAR',
       time: '12:00 PM',
-      recap: 'In the final game of the regular season, our team faced the Los Angeles Rams,'
+      recap: 'In the second of the last game of the season, our team faced the Los Angeles Rams,'
     },
     {
       week: 18,
