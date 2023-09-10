@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function TeamComponent() {
   const [rosterData, setRosterData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,7 +17,7 @@ function TeamComponent() {
             getStats: 'true'
           },
           headers: {
-            'X-RapidAPI-Key': 'c5a06ca78emshb28580c191d09a0p19816fjsnf8f65962ecf1',
+            'X-RapidAPI-Key': process.env.TANK_API_KEY,
             'X-RapidAPI-Host': 'https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLTeamRoster'
           }
         };
@@ -43,9 +43,7 @@ function TeamComponent() {
     <div>
       <h2>Team</h2>
       <p>Here is the roster for the 2023-2024 NFL Season:</p>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
+      
         <ul>
           {rosterData.map(player => (
             <li key={player.playerID}>
@@ -55,7 +53,6 @@ function TeamComponent() {
             </li>
           ))}
         </ul>
-      )}
     </div>
   );
 }
