@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './ScheduleComponent.css'; 
 
 function ScheduleComponent() {
   const [schedule, setSchedule] = useState([]);
@@ -33,22 +34,23 @@ function ScheduleComponent() {
   }, [apiKey]);
 
   return (
-    <div>
+    <div className="schedule-container">
       <h2>Here Is The Schedule For the 2023 Season</h2>
-      <ul>
+      <ul className="schedule-list">
         {schedule.map((game, index) => (
-          <li key={index}>
-            <p>Date: {game.gameWeek}</p>
-            <p>Home Team: {game.home}</p>
-            <p>Home Result: {game.homeResult}</p>
-            <p>Away Team: {game.away}</p>
-            <p>Away Result: {game.awayResult}</p>
-            <p>Home Team Points: {game.homePts}</p>
+          <li key={index} className="schedule-item">
+            <p className="game-info">Date: {game.gameWeek}</p>
+            <p className="game-info">Home Team: {game.home}</p>
+            <p className="game-info">Home Result: {game.homeResult}</p>
+            <p className="game-info">Away Team: {game.away}</p>
+            <p className="game-info">Away Result: {game.awayResult}</p>
+            <p className="game-info">Home Team Points: {game.homePts}</p>
           </li>
         ))}
       </ul>
     </div>
   );
+  
 }
 
 
