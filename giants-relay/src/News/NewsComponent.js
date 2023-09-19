@@ -1,6 +1,7 @@
 import React from 'react';
 import './News.css'
 
+// create a title 
 function NewsComponent() {
   const schedule = [
     {

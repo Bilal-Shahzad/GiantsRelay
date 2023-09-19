@@ -15,8 +15,10 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
+          <Route path="/" element={<EnterPage />}>
+          <Route path="Body" element={<Body />} />
+          </Route>
           <Route path="/enter" element={<EnterPage />} />
-          <Route path="/" element={<Body />} />
           <Route path="/schedule" element={<ScheduleComponent />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/news" element={<NewsPage />} />

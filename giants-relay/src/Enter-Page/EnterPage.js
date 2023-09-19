@@ -2,10 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const EnterPage = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const redirectToHomepage = () => {
-    navigate('/'); 
+    navigate('.App.js'); 
   };
 
   return (
