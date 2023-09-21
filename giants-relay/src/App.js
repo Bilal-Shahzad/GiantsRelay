@@ -19,7 +19,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<EnterPage />} />
-          <Route path="body" element={<Body />} />
+          <Route path="Body" element={<Body />} />
           <Route path="schedule" element={<ScheduleComponent />} />
           <Route path="team" element={<TeamPage />} />
           <Route path="news" element={<NewsPage />} />
