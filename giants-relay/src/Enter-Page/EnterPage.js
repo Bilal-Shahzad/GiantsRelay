@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './EnterPage.css'
 
 const EnterPage = () => {
   const navigate = useNavigate();

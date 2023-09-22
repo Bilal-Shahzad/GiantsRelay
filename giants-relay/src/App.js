@@ -11,6 +11,7 @@ import EnterPage from './Enter-Page/EnterPage';
 import WeekRecap from './News/Recap/WeekRecap'; 
 import Week1Recap from './News/Recap/week1';
 import Week2Recap from './News/Recap/week2';
+import Week3Recap from './News/Recap/week3';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="recap/*" element={<WeekRecap />} />
           <Route path="recap/week1" element={<Week1Recap />} />
           <Route path="recap/week2" element={<Week2Recap />} />
+          <Route path="recap/week3" element={<Week3Recap />} />
         </Routes>
         <Footer />
       </div>
