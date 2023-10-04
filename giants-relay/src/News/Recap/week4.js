@@ -6,7 +6,7 @@ function Week4Recap() {
     <div className="week-recap"> 
       <h2>Week 4 Recap</h2>
       <p>
-      The New York Giants, who surprised many with a successful 2022 NFL season under the leadership of first-year coach Brian Daboll, are experiencing a stark contrast in 2023. After breaking a streak of five consecutive losing seasons and making it to the playoffs last year, expectations were high for the Giants this season. However, their recent 24-3 loss to the Seattle Seahawks at MetLife Stadium reflects a disappointing start with a 1-3 record.</p>
+      The New York Giants, who surprised many with a successful 2022 NFL season under the leadership of first-year coach Brian Daboll, are experiencing a huge contrast in 2023. After breaking a streak of five consecutive losing seasons and making it to the playoffs last year, expectations were high for the Giants this season. However, their recent 24-3 loss to the Seattle Seahawks at MetLife Stadium reflects a disappointing start with a 1-3 record.</p>
 
 <p>
 One of the major challenges the Giants faced in this game was their struggling pass protection. The absence of All-Pro left tackle Andrew Thomas, who has been sidelined with a hamstring injury, and other injuries to the offensive line led to quarterback Daniel Jones being under constant pressure. The Seahawks capitalized on this, recording a franchise-record 11 sacks, and Jones faced 14 hits throughout the game. Despite completing an impressive 79.4% of his passes, Jones threw two interceptions, lost a fumble resulting in a Seattle touchdown, and failed to lead the Giants into the end zone.
