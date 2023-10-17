@@ -4,7 +4,7 @@ import './week.css';
 function Week6Recap() {
   return (
     <div className="week-recap"> 
-      <h2>Week 4 Recap</h2>
+      <h2>Week 6 Recap</h2>
       <p>
       In the aftermath of a 14-9 defeat against the Buffalo Bills, the New York Giants found both positives and challenges in a season that has seen more losses than wins. Despite the setback, there were notable highlights, particularly on the defensive front. The Giants' defense delivered an impressive performance by holding the Bills, the NFL's third-highest-scoring team, without a point for three quarters. Linebacker Bobby Okereke played a pivotal role with a team-high 11 tackles, including two for loss, and impactful plays such as tipping a Josh Allen pass and forcing a fumble.
 </p>

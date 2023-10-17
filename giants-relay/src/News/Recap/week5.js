@@ -4,7 +4,7 @@ import './week.css';
 function Week5Recap() {
   return (
     <div className="week-recap"> 
-      <h2>Week 4 Recap</h2>
+      <h2>Week 6 Recap</h2>
       <p>
       In a compelling matchup, the Miami Dolphins showcased their domincance as they secured a convincing 31-16 victory over the struggling New York Giants. The Dolphins lived up to expectations by amassing an impressive total of over 500 yards, underscoring their offensive dominance. This win elevated the Dolphins to a 4-1 record, positioning them at the top of the AFC East standings, while the Giants fell to a 1-4 record.
 
