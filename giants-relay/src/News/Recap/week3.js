@@ -4,7 +4,7 @@ import './week.css';
 function Week3Recap() {
   return (
     <div className="week-recap"> 
-      <h2>Week 2 Recap</h2>
+      <h2>Week 3 Recap</h2>
       <p>
       The Giants relentlessly blitzed Purdy, attempting it on 33 out of 39 dropbacks, as per NFL NextGen stats. Purdy responded effectively, gaining 247 of his 310 passing yards on those plays, including the touchdowns to rookie Ronnie Bell and Samuel.</p>
 
