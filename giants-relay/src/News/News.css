@@ -1,61 +1,73 @@
-.news-container {
+.week-recap {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f7f7f7;
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .recaps-heading {
-    font-size: 24px;
+}
+
+.week-recap h2 {
+    font-size: 36px;
+    color: #333;
     margin-bottom: 20px;
     text-align: center;
-    color: #333;
-  }
-  
-  .game-schedule {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .game-card {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    padding: 20px;
-    width: calc(33.33% - 20px); 
-  }
-  
-  .game-week {
+}
+
+.week-recap p {
     font-size: 18px;
-    margin: 0;
-    color: #333;
-  }
-  
-  .opponent-info {
-    font-size: 16px;
-    color: #666;
-    margin-top: 10px;
-  }
-  
-  .recap-text {
-    font-size: 16px;
-    color: #444;
-    margin-top: 10px;
-  }
-  
-  @media (max-width: 768px) {
-    .game-schedule {
-      flex-direction: column;
-      align-items: center;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.week-recap a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.week-recap a:hover {
+    color: #0056b3;
+}
+
+.week-recap img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.week-recap blockquote {
+    border-left: 4px solid #007bff;
+    margin: 20px 0;
+    padding-left: 15px;
+    color: #555;
+    font-style: italic;
+}
+
+.week-recap .author {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Phones */
+@media (max-width: 576px) {
+    .week-recap h2 {
+        font-size: 24px;
     }
-    
-    .game-card {
-      width: 100%;
+
+    .week-recap p {
+        font-size: 16px;
     }
-  }
-  
+}
+
+/* Tablets */
+@media (min-width: 577px) and (max-width: 768px) {
+    .week-recap h2 {
+        font-size: 28px;
+    }
+
+    .week-recap p {
+        font-size: 18px;
+    }
+}
