@@ -15,7 +15,7 @@ import Week3Recap from './News/Recap/week3';
 import Week4Recap from './News/Recap/week4';
 import Week5Recap from './News/Recap/week5';
 import Week6Recap from './News/Recap/week6';
-import Week7Recap from './News/week7';
+import Week7Recap from './News/Recap/week7';
 
 function App() {
   return (
