@@ -36,7 +36,6 @@ While the Giants had control for most of the game, two critical second-half turn
 <p>
 In the end, the Giants managed to secure the win, improving their record to 2-5. The victory was a collective effort, emphasizing the importance of playing complementary football and supporting each other. They look to build on this success in the upcoming game against the New York Jets, with the hope of continuing to play with the same level of teamwork and determination that characterized their win against the Washington Commanders.
 </p>
-
 </div>
   );
 }

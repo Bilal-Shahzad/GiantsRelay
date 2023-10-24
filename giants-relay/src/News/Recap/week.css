@@ -1,0 +1,19 @@
+.week-recap {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .week-recap h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .week-recap p {
+    color: #666;
+    font-size: 16px;
+  }
+  
