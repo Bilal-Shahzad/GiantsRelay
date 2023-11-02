@@ -16,4 +16,34 @@
     color: #666;
     font-size: 16px;
   }
+
+  /* tablet */
+  @media screen and (max-width: 768px) {
+    .week-recap {
+      padding: 15px;
+    }
+    .week-recap h2 {
+        font-size: 20px; 
+        margin-bottom: 8px; 
+      }
+    
+      .week-recap p {
+        font-size: 14px; 
+      }
+    }
+
+/* phones */
+@media screen and (max-width: 480px) {
+    .week-recap {
+      padding: 10px; 
+    }
   
+    .week-recap h2 {
+      font-size: 18px; 
+      margin-bottom: 6px; 
+    }
+  
+    .week-recap p {
+      font-size: 12px; 
+    }
+  }
