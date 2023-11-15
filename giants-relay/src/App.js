@@ -18,6 +18,7 @@ import Week6Recap from './News/Recap/week6';
 import Week7Recap from './News/Recap/week7';
 import Week8Recap from './News/Recap/week8';
 import Week9Recap from './News/Recap/week9';
+import Week10Recap from './News/Recap/week10';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="recap/week7" element={<Week7Recap />} />
           <Route path="recap/week8" element={<Week8Recap />} />
           <Route path="recap/week9" element={<Week9Recap />} />
+          <Route path="recap/week10" element={<Week10Recap />} />
         </Routes>
         <Footer />
       </div>
